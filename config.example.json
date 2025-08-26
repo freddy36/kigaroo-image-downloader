@@ -1,0 +1,13 @@
+{
+        "save_dir": ".",
+        "username": "john@example.com",
+        "password": "123456",
+        "base_url": "https://app.kigaroo.de",
+        "location": {
+                "latitude": [49.0, 52.0, 12.2666],
+                "latitude_ref": "N",
+                "longitude": [8.0, 37.0, 37.1094],
+                "longitude_ref": "E",
+                "altitude": 15
+        }
+}
