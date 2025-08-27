@@ -1,5 +1,5 @@
 {
-        "save_dir": ".",
+        "save_dir": "./albums",
         "username": "john@example.com",
         "password": "123456",
         "base_url": "https://app.kigaroo.de",
