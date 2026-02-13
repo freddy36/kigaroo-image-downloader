@@ -122,8 +122,10 @@ async def run() -> None:
         await page.goto("/backend/gallery/")
         await page.wait_for_load_state("networkidle")
 
-        collections = page.locator('css=article[class="app-gridCard kgr-grid__cell"]')
+        collections = page.locator('css=article')
         count = await collections.count()
+        if count <= 0:
+            print(f"found {count} albums")
         albums = []
         for i in range(count):
             collection = collections.nth(i)
@@ -135,7 +137,7 @@ async def run() -> None:
                 "div.kgr-card__footerContents > div.kgr-postfix__fluid"
             ).text_content()
             image_count_text = await collection.locator(
-                "div.kgr-centered.kgr-centered--vertically"
+                "div.kgr-postfix__fixed.kgr-centered.kgr-centered--vertically:has(svg)"
             ).text_content()
             image_count = int(image_count_text)
 
